@@ -1,42 +1,38 @@
-// function that builds a grid in the "container"
-function createGrid(x) {
-    for (var rows = 0; rows < x; rows++) {
-        for (var columns = 0; columns < x; columns++) {
-            $("#container").append("<div class='grid'></div>");
-        };
-    };
-    $(".grid").width(960/x);
-    $(".grid").height(960/x);
-};
+window.onload = ()=> {
+ 
+  const start = document.querySelector('#start');
+  const clear = document.querySelector('#clear');
+  const grid = document.getElementById('mineplane');
+  
+  
 
-// function that clears the grid
-function clearGrid(){
-    $(".grid").remove();
-};  
+  start.addEventListener('click', (e)=>{
+    e.preventDefault();
+    refreshGrid();
+    
+  });
 
-// function that prompts the user to select the number of boxes in a new grid
-// the function then also creates that new grid
-function refreshGrid(){
-    var z = prompt("How many boxes per side?");
-    clearGrid();
-    createGrid(z);
-};
+  clear.addEventListener('click', clearGrid);
 
-// create a 16x16 grid when the page loads
-// creates a hover effect that changes the color of a square to black when the mouse passes over it, leaving a (pixel) trail through the grid
-// allows the click of a button to prompt the user to create a new grid
-$(document).ready(function() {
-    createGrid(16);
+  function refreshGrid() {
+    let gridSize = prompt("Enter a grid size.");
+    createGrid(gridSize);
+  }
 
-    $(".grid").mouseover(function() {
-        $(this).css("background-color", "black");
-        });
+  function createGrid(x) {
+    document.querySelector('h2').innerText = `You are using a ${x} x ${x} grid.`
+    for (let i=0; i<(x*x); i++) {
+      let box = document.createElement('div');
+      box.classList.add(`div-${i}`,'grid');
+      let dimension = 500/x;
+      box.style.width = `${dimension}px`;
+      box.style.height= `${dimension}px`;
+      grid.appendChild(box);
+    }
+    console.log("Created divs");
+  }
 
-    $(".newGrid").click(function() {
-        refreshGrid();
-
-        $(".grid").mouseover(function() {
-        $(this).css("background-color", "black");
-        });
-    });
-});
+  function clearGrid() {
+    grid.innerHTML = '';
+  }
+}
