@@ -10,6 +10,40 @@
 	border: none;
 }
 
+header {
+	text-align: center;
+	border: 1px solid red;
+	letter-spacing: 20px;
+	text-transform: uppercase;
+}
+
+/* Grid Styling */
+main {
+	width: 500px;
+	display: flex;
+	flex-direction: column;
+	margin: 0 auto;
+}
+
+
+div#mineplane {
+	width: 500px;
+	height: 500px;
+	border: 1px solid red;
+	margin-top: 50px;
+}
+
+.controls {
+	display: flex;
+	justify-content: space-around;
+	margin-top: 20px;
+}
+
+button {
+	width: 150px;
+	height: 30px;
+}
+
 .grid {
 	margin:0;
 	padding:0;
