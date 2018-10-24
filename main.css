@@ -18,8 +18,10 @@ div#mineplane {
 	flex-wrap: wrap;
 	width: 500px;
 	height: 500px;
-	border: 1px solid red;
+	border: 10px rgba(70, 156, 255, 0.795);
+	border-style: groove;
 	margin: 50px auto 0 auto;
+	background-image: url(assets/mineplaneBG2.jpg)
 }
 
 .controls {
@@ -46,8 +48,11 @@ button {
 	box-sizing: border-box;
 	margin:0;
 	padding:0;
-	border:none;
-	outline:1px solid #000;
-  display:inline-block;
-  /* border-radius: 50%; */
+	background-color: rgba(220, 20, 60, 0.137);
+	border-width: 2px;
+	border-style: outset;
+	border-image-outset: 1px;
+	/*outline:1px solid rgb(69, 48, 187);*/
+  	display:inline-block;
+  	/* border-radius: 50%; */
 }
