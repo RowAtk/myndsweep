@@ -3,7 +3,7 @@ window.onload = ()=> {
   const start = document.querySelector('#start');
   const clear = document.querySelector('#clear');
   const plane = document.getElementById('mineplane');
-  let grids = document.querySelectorAll(".grid");
+  const grids = document.querySelectorAll(".grid");
   
   
 
@@ -28,6 +28,7 @@ window.onload = ()=> {
       let dimension = 500/x;
       box.style.width = `${dimension}px`;
       box.style.height= `${dimension}px`;
+      box.addEventListener('click', blockGrid);
       plane.appendChild(box);
 
       /*createClickers()*/
@@ -50,7 +51,7 @@ window.onload = ()=> {
   function blockGrid() {
     this.classList.add("cgrid");
     console.log("Clicked grid");
-    alert(this.classList.backgroundColour);
+    // alert(this.classList.backgroundColour);
   }
 }
 
