@@ -46,15 +46,20 @@ button {
 
 /*CLICKERRR*/
 
-.grid {
+div.grid {
 	box-sizing: border-box;
 	margin:0;
 	padding:0;
 	background-color: rgba(220, 20, 60, 0.137);
 	border-width: 2px;
 	border-style: outset;
-	border-image-outset: 1px;
 	/*outline:1px solid rgb(69, 48, 187);*/
   	display:inline-block;
   	/* border-radius: 50%; */
 }
+
+div.cgrid {
+	background-color: rgba(220, 20, 60, 1);
+	border-style: inset;
+}
+

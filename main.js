@@ -2,7 +2,8 @@ window.onload = ()=> {
  
   const start = document.querySelector('#start');
   const clear = document.querySelector('#clear');
-  const grid = document.getElementById('mineplane');
+  const plane = document.getElementById('mineplane');
+  let grids = document.querySelectorAll(".grid");
   
   
 
@@ -27,12 +28,31 @@ window.onload = ()=> {
       let dimension = 500/x;
       box.style.width = `${dimension}px`;
       box.style.height= `${dimension}px`;
-      grid.appendChild(box);
+      plane.appendChild(box);
+
+      /*createClickers()*/
+      createClickers();
     }
     console.log("Created divs");
   }
 
   function clearGrid() {
-    grid.innerHTML = '';
+    plane.innerHTML = '';
+  }
+
+  /*CLICKER */
+  function createClickers() {
+    grids.forEach(g => {
+      g.addEventListener('click', blockGrid);
+    });
+  }
+
+  function blockGrid() {
+    this.classList.add("cgrid");
+    console.log("Clicked grid");
+    alert(this.classList.backgroundColour);
   }
 }
+
+
+
