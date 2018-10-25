@@ -49,7 +49,7 @@ window.onload = ()=> {
   }
 
   function blockGrid() {
-    this.classList.add("cgrid");
+    this.classList.toggle("cgrid");
     console.log("Clicked grid");
     // alert(this.classList.backgroundColour);
   }
